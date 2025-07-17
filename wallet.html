@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiim Wallet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }h1 {
+  color: gold;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #ccc;
+  margin-bottom: 30px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.wallet-box {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px gold;
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  color: gold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: #fff;
+}
+
+.btn {
+  margin-top: 20px;
+  background-color: gold;
+  color: #000;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e0c100;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Jiim Wallet</h1>
+  <p>
+    Welcome to your Jiim Coin wallet. View your balance, send coins, or receive rewards securely.
+  </p>  <div class="wallet-box">
+    <label for="wallet-address">Your Wallet Address:</label>
+    <input type="text" id="wallet-address" value="0xYourWalletAddressHere" readonly><label for="balance">Balance:</label>
+<input type="text" id="balance" value="100 JIIM" readonly>
+
+<label for="send-to">Send To:</label>
+<input type="text" id="send-to" placeholder="Recipient address">
+
+<label for="amount">Amount:</label>
+<input type="number" id="amount" placeholder="Enter amount">
+
+<button class="btn" onclick="sendTransaction()">Send Jiim</button>
+
+  </div>  <script>
+    function sendTransaction() {
+      const to = document.getElementById("send-to").value;
+      const amount = document.getElementById("amount").value;
+      if (to && amount) {
+        alert(`Transaction sent: ${amount} JIIM to ${to}`);
+      } else {
+        alert("Please enter a recipient and amount.");
+      }
+    }
+  </script></body>
+</html>
